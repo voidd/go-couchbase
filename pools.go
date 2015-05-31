@@ -18,7 +18,7 @@ import (
 	"sync/atomic"
 	"unsafe"
 
-	"github.com/couchbase/gomemcached/client" // package name is 'memcached'
+	"github.com/voidd/gomemcached/client" // package name is 'memcached'
 )
 
 // HTTPClient to use for REST and view operations.

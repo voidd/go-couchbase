@@ -7,7 +7,7 @@ import (
 	"log"
 	"time"
 
-	"github.com/couchbase/go-couchbase"
+	"github.com/voidd/go-couchbase"
 )
 
 // A ViewMarker is stored in your DB to mark a particular view

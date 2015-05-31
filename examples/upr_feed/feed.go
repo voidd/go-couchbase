@@ -3,9 +3,9 @@ package main
 import (
 	"flag"
 	"fmt"
-	"github.com/couchbase/go-couchbase"
-	"github.com/couchbase/gomemcached"
-	"github.com/couchbase/gomemcached/client"
+	"github.com/voidd/go-couchbase"
+	"github.com/voidd/gomemcached"
+	"github.com/voidd/gomemcached/client"
 	"log"
 	"math/rand"
 	"net/http"

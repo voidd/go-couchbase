@@ -6,7 +6,7 @@ import (
 	"log"
 	"time"
 
-	"github.com/couchbase/go-couchbase"
+	"github.com/voidd/go-couchbase"
 )
 
 var poolName = flag.String("pool", "default", "Pool name")

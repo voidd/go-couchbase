@@ -35,8 +35,8 @@ import (
 	"sync"
 	"time"
 
-	"github.com/couchbase/gomemcached"
-	"github.com/couchbase/gomemcached/client" // package name is 'memcached'
+	"github.com/voidd/gomemcached"
+	"github.com/voidd/gomemcached/client" // package name is 'memcached'
 )
 
 // Maximum number of times to retry a chunk of a bulk get on error.
@@ -403,6 +403,20 @@ func (w WriteOptions) String() string {
 		f = append(f, fmt.Sprintf("0x%x", int(w)))
 	}
 	return strings.Join(f, "|")
+}
+
+
+// Executes Touch method
+func (b *Bucket) Touch(k string, exp int) error {
+	if ClientOpCallback != nil {
+		defer func(t time.Time) { ClientOpCallback("Touch", k, t, err) }(time.Now())
+	}
+
+	err = b.Do(k, func(mc *memcached.Client, vb uint16) error {
+			result, err = mc.Touch(vb, k, exp)
+			return err
+		})
+	return
 }
 
 // Error returned from Write with AddOnly flag, when key already exists in the bucket.

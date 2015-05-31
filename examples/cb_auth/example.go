@@ -3,7 +3,7 @@ package main
 import (
 	"flag"
 	"github.com/couchbase/cbauth"
-	"github.com/couchbase/go-couchbase"
+	"github.com/voidd/go-couchbase"
 	"log"
 	"net/url"
 )
